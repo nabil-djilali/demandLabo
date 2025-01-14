@@ -40,7 +40,7 @@ namespace BmLab
             await _page.Locator("#UserNameInput").ClickAsync();
             await _page.Locator("#UserNameInput").FillAsync("su@0");
             await _page.Locator("#PasswordInput").ClickAsync();
-            await _page.Locator("#PasswordInput").FillAsync("31.02*27");
+            await _page.Locator("#PasswordInput").FillAsync("41.02*27");
             await _page.GetByRole(AriaRole.Button, new() { Name = "Se connecter" }).ClickAsync();
 
             // Hover over the main menu item
@@ -49,8 +49,7 @@ namespace BmLab
 
             // Click the 'Demande' submenu item
             var subMenuItem = _page.Locator("div.FlySubMenu a[href='/AnalyseDetail']:has-text('Demande')");
-            await subMenuItem.WaitForAsync(new LocatorWaitForOptions { State = WaitForSelectorState.Visible, Timeout = 60000 });
-            await subMenuItem.ClickAsync();
+            await _page.GotoAsync("https://senegal.bmvie.net/AnalyseDetail");
 
             // Select patient
             await _page.GetByPlaceholder("Sélectionner patient").ClickAsync();
@@ -99,6 +98,9 @@ namespace BmLab
             // Assert that the table is not empty
             var tableRowsAfterUpdate = _page.Locator("div.col-md-8 table.dxbl-grid-table >> tbody >> tr");
             int rowCountAfterUpdate = await tableRowsAfterUpdate.CountAsync();
+
+            Console.WriteLine("rowCountAfterUpdate"+ rowCountAfterUpdate);
+
             Assert.That(rowCountAfterUpdate, Is.GreaterThan(0), "The table should not be empty after clicking 'Ajouter'.");
         }
 

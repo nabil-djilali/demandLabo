@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BmLab")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ffd03de63323c9941f3c8b76258f411ffec26096")]
 [assembly: System.Reflection.AssemblyProductAttribute("BmLab")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BmLab")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
